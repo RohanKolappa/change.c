@@ -1,0 +1,39 @@
+/*This program named change.c asks the user
+how much money they would like to withdraw
+and then tells them how many of which bills they are to receive.*/
+#include <stdio.h>
+
+int main() {
+  /*rather than creating a variable for each denomination (1, 5, 10, 20, 50, 100),
+  we have only one variable named billCount, which uses less memory */
+  int billCount;
+  int total;
+  printf("Please enter the amount of money you wish to withdraw: ");
+  scanf("%d", &total);
+
+  billCount = total/100;
+  total = total - (billCount * 100);
+  printf("You received %d hundred(s)\n", billCount);
+
+  billCount = total/50;
+  total = total - (billCount * 50);
+  printf("You received %d fifty(s)\n", billCount);
+
+  billCount = total/20;
+  total = total - (billCount * 20);
+  printf("You received %d twenty(s)\n", billCount);
+
+  billCount = total/10;
+  total = total - (billCount * 10);
+  printf("You received %d ten(s)\n", billCount);
+
+  billCount = total/5;
+  total = total - (billCount * 5);
+  printf("You received %d five(s)\n", billCount);
+  
+  billCount = total/1;
+  total = total - (billCount * 1);
+  printf("You received %d one(s)\n", billCount);
+
+  return 0;
+}
